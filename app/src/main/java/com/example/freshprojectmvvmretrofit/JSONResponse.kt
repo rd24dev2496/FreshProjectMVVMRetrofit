@@ -2,8 +2,6 @@ package com.example.freshprojectmvvmretrofit
 
 class JSONResponse {
 
-
-    class Amiibo {
         var amiiboSeries: String? = null
         var character: String? = null
         var gameSeries: String? = null
@@ -13,7 +11,6 @@ class JSONResponse {
       //  var release: Release? = null
         var tail: String? = null
         var type: String? = null
-    }
 
 
 }

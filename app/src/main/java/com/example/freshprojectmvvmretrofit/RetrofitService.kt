@@ -8,8 +8,10 @@ import retrofit2.http.GET
 interface RetrofitService {
     @GET("movielist.json")
    // @GET("api/amiibo")
-  //@GET("amiibo")
-    fun getAllAmiibo(): Call<List<Amiibo>>
+  //@GET("amiibo/")  fun getAllAmiibo(): Call<JSONResponse>
+    //    private lateinit var amiibo: Array<Amiibo?>
+    //fun getAllAmiibo(): Call<List<Amiibo>>
+     fun getAllAmiibo(): Call<List<Amiibo>>
     companion object{
         var retrofitService:RetrofitService?=null
         fun getInstance():RetrofitService{

@@ -1,5 +1,9 @@
 package com.example.freshprojectmvvmretrofit
 
+
+
+data class Amiibo(val amiiboSeries: String, val character: String, val gameSeries: String, val head: String,val imageUrl:String,val name : String,val tail : String,val type : String)
+/*
 class Amiibo {
     var amiiboSeries: String? = null
     var character: String? = null
@@ -14,5 +18,4 @@ class Amiibo {
 
 class Root {
     var amiibo: List<Amiibo>? = null
-}
-//data class Amiibo(val amiiboSeries: String, val character: String, val gameSeries: String, val head: String,val name : String,val imageUrl:String)
+}*/
