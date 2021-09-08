@@ -1,16 +1,16 @@
 package com.example.freshprojectmvvmretrofit
-
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.freshprojectmvvmretrofit.databinding.AdapterAmiiboBinding
-
 class MainAdapter: RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
-    var amiibos= mutableListOf<Amiibo>()
-    fun setAmiiboList(amiibos: List<Amiibo>)
+    var amiiboLists= mutableListOf<Amiibo>()
+
+    fun setAmiiboList(amiiboLists: JSONResponse)
     {
-        this.amiibos=amiibos.toMutableList()
+      this.amiiboLists= amiiboLists.amiibo as MutableList<Amiibo>
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -19,19 +19,17 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
         return MainViewHolder(binding)
     }
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-        val amiibo=amiibos[position]
+        val amiibo=amiiboLists[position]
         holder.binding.amiiboSeries.text = amiibo.amiiboSeries
         holder.binding.character.text = amiibo.character
         holder.binding.gameSeries.text = amiibo.gameSeries
         holder.binding.head.text = amiibo.head
         holder.binding.name.text = amiibo.name
-        Glide.with(holder.itemView.context).load(amiibo.imageUrl).into(holder.binding.imageview)
-
+        Glide.with(holder.itemView.context).load(amiibo.image).into(holder.binding.imageview)
     }
     override fun getItemCount(): Int {
-        return amiibos.size
+        return amiiboLists.size
     }
     class MainViewHolder(val binding: AdapterAmiiboBinding):RecyclerView.ViewHolder(binding.root){
-
     }
 }

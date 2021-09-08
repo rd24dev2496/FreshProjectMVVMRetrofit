@@ -1,6 +1,5 @@
 package com.example.freshprojectmvvmretrofit
 
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -30,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             adapter.setAmiiboList(it)
         })
         viewModel.errorMessage.observe(this, Observer {
-
         })
         viewModel.getAllAmiibo()
     }

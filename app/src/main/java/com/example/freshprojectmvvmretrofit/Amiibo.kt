@@ -1,18 +1,28 @@
 package com.example.freshprojectmvvmretrofit
 
-class Amiibo {
-    var amiiboSeries: String? = null
-    var character: String? = null
-    var gameSeries: String? = null
-    var head: String? = null
-    var imageUrl: String? = null
-    var name: String? = null
-    //  var release: Release? = null
-    var tail: String? = null
-    var type: String? = null
-}
+import com.google.gson.annotations.Expose
 
-class Root {
-    var amiibo: List<Amiibo>? = null
+import com.google.gson.annotations.SerializedName
+
+class Amiibo {
+    @SerializedName("amiiboSeries")
+    @Expose
+    var amiiboSeries: String? = null
+    @SerializedName("character")
+    @Expose
+    var character: String? = null
+    @SerializedName("gameSeries")
+    @Expose
+    var gameSeries: String? = null
+    @SerializedName("head")
+    @Expose
+    var head: String? = null
+    @SerializedName("image")
+    @Expose
+    var image: String? = null
+    @SerializedName("name")
+    @Expose
+    var name: String? = null
+
+
 }
-//data class Amiibo(val amiiboSeries: String, val character: String, val gameSeries: String, val head: String,val name : String,val imageUrl:String)
